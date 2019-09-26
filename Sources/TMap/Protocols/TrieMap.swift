@@ -67,6 +67,12 @@ public extension TrieMap {
         })
     }
     
+    func values() -> [Value] {
+        return keys().reduce([], { (values, entry) -> [Value] in
+            return values + [self[entry]!]
+        })
+    }
+    
     func elements() -> [Element] {
         return keys().reduce([], { (elements, entry) -> [Element] in
             return elements + [(entry, self[entry]!)]

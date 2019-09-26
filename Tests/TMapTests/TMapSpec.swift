@@ -28,6 +28,18 @@ final class TMapSpec: QuickSpec {
                 expect(map2[key2]).toNot(beNil())
                 expect(map2[key2]!).to(equal(value2))
             }
+            it("should be able to get all keys") {
+                expect(map1.keys().count).to(equal(3))
+                expect(map1.keys()).to(contain(key1))
+                expect(map1.keys()).to(contain(key2))
+                expect(map1.keys()).to(contain(key3))
+            }
+            it("should be able to get all values") {
+                expect(map1.values().count).to(equal(3))
+                expect(map1.values()).to(contain(value1))
+                expect(map1.values()).to(contain(value2))
+                expect(map1.values()).to(contain(value3))
+            }
             it("should be equal bit for bit") {
                 expect(data1).to(equal(data2))
                 expect(data2).to(equal(data3))
