@@ -16,6 +16,8 @@ public protocol TrieMap: Codable {
     func deleting(key: Key) -> Self
     func elements() -> [Element]
     func isEmpty() -> Bool
+    func keys() -> [Key]
+    func values() -> [Value]
     
     init(trueNode: NodeType?, falseNode: NodeType?)
     init()
