@@ -10,11 +10,11 @@ All Keys must conform to BinaryEncodable (instead of Hashable), and values must 
 
 ### Using Swift Package Manager
 
-Add Swiftrie to Package.swift and the appropriate targets
+Add TMap to Package.swift and the appropriate targets
 
 ```swift
 dependencies: [
-.package(url: "https://github.com/pumperknickle/Swiftrie.git", from: "1.0.0")
+.package(url: "https://github.com/pumperknickle/TMap.git", from: "1.0.0")
 ]
 ```
 
@@ -22,7 +22,7 @@ dependencies: [
 
 ### Importing framework
 
-Use Swiftrie by including it in the imports of your swift file
+Use TMap by including it in the imports of your swift file
 
 ```swift
 import Swiftrie
@@ -30,7 +30,7 @@ import Swiftrie
 
 ### Initialization
 
-Create an empty generic TMap
+Create an empty generic dictionary
 
 ```swift
 let newMap = TMap<String, [[String]]>()
@@ -38,7 +38,7 @@ let newMap = TMap<String, [[String]]>()
 
 ### Setting values to keys
 
-When setting values, a new TMap is returned with the new key value pair.
+When setting values, a new structure is returned with the new key value pair.
 
 ```swift
 let key1 = "foo"
