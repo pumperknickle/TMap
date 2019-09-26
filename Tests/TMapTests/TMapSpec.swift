@@ -6,6 +6,7 @@ import Bedrock
 
 final class TMapSpec: QuickSpec {
     override func spec() {
+        
         let newMap = TMap<String, [[String]]>()
         let key1 = "foo"
         let value1 = [["fooValue"]]
