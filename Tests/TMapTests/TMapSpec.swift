@@ -6,7 +6,6 @@ import Bedrock
 
 final class TMapSpec: QuickSpec {
     override func spec() {
-        
         let newMap = TMap<String, [[String]]>()
         let key1 = "foo"
         let value1 = [["fooValue"]]
@@ -47,8 +46,8 @@ final class TMapSpec: QuickSpec {
             }
             let map4 = newMap.setting(key: key4, value: value4)
             let map5 = map1.setting(key: key4, value: value4)
-            let combined = map4 + map1
-            let data4 = try! JSONEncoder().encode(map4 + map1)
+            let combined = map4.overwrite(with: map1)
+            let data4 = try! JSONEncoder().encode(combined)
             let data5 = try! JSONEncoder().encode(map5)
             it("merging should equal") {
                 expect(combined[key4]!).to(equal(value4))
