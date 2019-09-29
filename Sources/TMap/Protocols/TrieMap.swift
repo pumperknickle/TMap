@@ -63,20 +63,20 @@ public extension TrieMap {
     
     func keys() -> [Key] {
         let allBinaryKeys = (trueNode?.allKeys(key: []) ?? []) + (falseNode?.allKeys(key: []) ?? [])
-        return allBinaryKeys.reduce([], { (keys, entry) -> [Key] in
+        return allBinaryKeys.lazy.reduce([], { (keys, entry) -> [Key] in
             guard let key = Key(raw: entry) else { return keys }
             return keys + [key]
         })
     }
     
     func values() -> [Value] {
-        return keys().reduce([], { (values, entry) -> [Value] in
+        return keys().lazy.reduce([], { (values, entry) -> [Value] in
             return values + [self[entry]!]
         })
     }
     
     func elements() -> [Element] {
-        return keys().reduce([], { (elements, entry) -> [Element] in
+        return keys().lazy.reduce([], { (elements, entry) -> [Element] in
             return elements + [(entry, self[entry]!)]
         })
     }
